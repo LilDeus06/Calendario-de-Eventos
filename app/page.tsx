@@ -61,7 +61,7 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [, setIsLoggedIn] = useState(false);
   const auth = getAuth();
 
   useEffect(() => {
@@ -137,7 +137,7 @@ export default function Home() {
   const [modoEdicion, setModoEdicion] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [modoOscuro, setModoOscuro] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
+  const [, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
