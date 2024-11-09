@@ -308,7 +308,7 @@ export default function Home() {
         >
           <div className="flex flex-col sm:flex-row items-center justify-between">
             <CardTitle className="text-xl sm:text-2xl mb-4 sm:mb-0">
-              Reservación de Reuniones SAFO
+              Reservación de Reuniones SAFCO
             </CardTitle>
             <div className="flex items-center space-x-2">
               <Login onLoginSuccess={() => setIsLoggedIn(true)} />
@@ -329,7 +329,7 @@ export default function Home() {
                 <DialogTrigger asChild>
                 <Button
                     className="bg-red-600 hover:bg-red-700 ml-2"
-                    disabled={!isLoggedIn}
+                    
                   >
                     <Plus className="mr-2 h-4 w-4" />
                     Nuevo
