@@ -329,7 +329,7 @@ export default function Home() {
                 <DialogTrigger asChild>
                 <Button
                     className="bg-red-600 hover:bg-red-700 ml-2"
-                    disabled={!isLoggedIn}
+                    
                   >
                     <Plus className="mr-2 h-4 w-4" />
                     Nuevo
