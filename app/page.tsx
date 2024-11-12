@@ -176,7 +176,7 @@
     };
 
     const cargarReservaciones = async () => {
-      const reservacionesCol = collection(db, 'reservaciones');
+      const reservacionesCol = collection(db, 'consorcio');
       const reservacionesSnapshot = await getDocs(reservacionesCol);
       const listaReservaciones = reservacionesSnapshot.docs.map(doc => ({
         id: doc.id,
@@ -248,7 +248,7 @@
       try {
         const colorAleatorio = obtenerColorAleatorio(); // Obtener color aleatorio
         if (modoEdicion && reservacionSeleccionada) {
-          await updateDoc(doc(db, 'reservaciones', reservacionSeleccionada.id), { ...formData, color: colorAleatorio });
+          await updateDoc(doc(db, 'consorcio', reservacionSeleccionada.id), { ...formData, color: colorAleatorio });
           Swal.fire({
             title: "Reservación Actualizada Exitosamente!",
             text: "Acepta para continuar",
@@ -256,7 +256,7 @@
 
           });
         } else {
-          await addDoc(collection(db, 'reservaciones'), { ...formData, color: colorAleatorio });
+          await addDoc(collection(db, 'consorcio'), { ...formData, color: colorAleatorio });
           Swal.fire({
             title: "Reservación creada Exitosamente!",
             text: "Acepta para continuar",
@@ -293,7 +293,7 @@
         });
         return;
       }
-      await deleteDoc(doc(db, 'reservaciones', id));
+      await deleteDoc(doc(db, 'consorcio', id));
       await cargarReservaciones();
       Swal.fire({
         title: "Reservación Eliminada Exitosamente!",
@@ -375,7 +375,7 @@
     };
 
     useEffect(() => {
-      document.title = "Reservación de Reuniones SAFCO"; // Cambiar el título de la página
+      document.title = "Reuniones Consorcio"; // Cambiar el título de la página
     }, []);
 
 
@@ -410,7 +410,7 @@
           >
             <div className="flex flex-col sm:flex-row items-center justify-between">
               <CardTitle className="flex items-center space-y-2 space-x-2 mb-4 sm:mb-0 text-3xl">
-              Reservación de Reuniones SAFCO
+              Reserva Sala de Reuniones Consorcio
               </CardTitle>
               <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-5 space-x-0">
                 <Login onLoginSuccess={() => setIsLoggedIn(true)} />
@@ -588,7 +588,7 @@
     
         {/* Firma sutil */}
         <footer className="text-center mt-8 text-gray-500 text-xs">
-          &copy; Desarrollado por L I L - D.
+          &copy; Desarrollado por Gestión de Información.
         </footer>
       </main>
     );
